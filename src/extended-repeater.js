@@ -1,20 +1,18 @@
 module.exports = function repeater(str, options) {
-    throw 'Not implemented';
-    his.repeatTimes=options.repeatTimes
+  let {
+    addition: add = "",
+    additionSeparator: addsep = "",
+    separator: sep = "+",
+    repeatTimes: repTime = 1,
+    additionRepeatTimes: addrep = 1
+  } = options;
 
-this.separator=options.separator
-
-this.addition=options.addition
-
-this.additionRepeatTimes=
-options.additionRepeatTimes
-
-this.additionSeparator=
-options.additionSeparator
-
-let res =str+(this.addition+this.additionSeparator).repeat(this.additionRepeatTimes).slice(0,-2) +this.separator
-
-return res.repeat(this.repeatTimes)
-    
-};
+  if(addrep==1&&!addsep){
+    return (str+(add+addsep).repeat(addrep) +sep).repeat(repTime).slice(0,-sep.length)
+ }
+ else{
+ return (str+(add+addsep).repeat(addrep).slice(0,-addsep.length) +sep).repeat(repTime).slice(0,-sep.length)
+ }
   
+ 
+};
